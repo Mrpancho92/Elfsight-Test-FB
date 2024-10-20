@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-5ab5307e-fb2c-4eba-8caa-54bfae9d00d3" data-elfsight-app-lazy></div>
+    <button class="button">Показать виджет</button>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.elfsight-app-5ab5307e-fb2c-4eba-8caa-54bfae9d00d3');
+    const button = document.querySelector('.button');
+    localStorage.getItem('showForm') === 'true' ? form.style.display = 'block' : form.style.display = 'none';
+    button.addEventListener('click', () => {
+        if (form.style.display === 'none') {
+            form.style.display='block';
+            button.textContent = 'Скрыть виджет';
+            localStorage.setItem('showForm', 'true');
+        } else {
+            form.style.display='none';
+            button.textContent = 'Показать виджет';
+            localStorage.setItem('showForm', 'false');
+        }
+    }) 
+})
+    </script>
+   
+</body>
+</html>
